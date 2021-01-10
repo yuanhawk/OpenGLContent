@@ -1,0 +1,2 @@
+C:\Users\yuanm\source\repos\OpenGLCourseApp\Debug\OpenGLCourseApp.exe
+C:\Users\yuanm\source\repos\OpenGLCourseApp\Debug\OpenGLCourseApp.pdb
