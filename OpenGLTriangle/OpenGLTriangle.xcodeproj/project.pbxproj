@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B938255B26E337710013F111 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B938255A26E337710013F111 /* Mesh.cpp */; };
+		B938255E26E3B0AF0013F111 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B938255D26E3B0AF0013F111 /* Shader.cpp */; };
+		B938256426E3BE850013F111 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B938256326E3BE850013F111 /* Window.cpp */; };
 		B964EB8926B6CF0C00DD54AA /* libGLEW.2.2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B964EB8826B6CF0C00DD54AA /* libGLEW.2.2.0.dylib */; };
 		B964EB8B26B6CF1200DD54AA /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B964EB8A26B6CF1200DD54AA /* OpenGL.framework */; };
 		B964EB8D26B6CF1F00DD54AA /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B964EB8C26B6CF1F00DD54AA /* libglfw.3.3.dylib */; };
@@ -26,6 +29,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B938255A26E337710013F111 /* Mesh.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Mesh.cpp; sourceTree = "<group>"; };
+		B938255C26E3377C0013F111 /* Mesh.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Mesh.h; sourceTree = "<group>"; };
+		B938255D26E3B0AF0013F111 /* Shader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Shader.cpp; sourceTree = "<group>"; };
+		B938255F26E3B1B80013F111 /* Shader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Shader.h; sourceTree = "<group>"; };
+		B938256126E3B9060013F111 /* shader.frag */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.frag; sourceTree = "<group>"; };
+		B938256226E3B9150013F111 /* shader.vert */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.glsl; path = shader.vert; sourceTree = "<group>"; };
+		B938256326E3BE850013F111 /* Window.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
+		B938256526E3BE940013F111 /* Window.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
 		B964EB7D26B6CEE000DD54AA /* OpenGLTriangle */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = OpenGLTriangle; sourceTree = BUILT_PRODUCTS_DIR; };
 		B964EB8826B6CF0C00DD54AA /* libGLEW.2.2.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libGLEW.2.2.0.dylib; path = ../../../../opt/homebrew/Cellar/glew/2.2.0_1/lib/libGLEW.2.2.0.dylib; sourceTree = "<group>"; };
 		B964EB8A26B6CF1200DD54AA /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -47,6 +58,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B938256026E3B8D40013F111 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				B938256126E3B9060013F111 /* shader.frag */,
+				B938256226E3B9150013F111 /* shader.vert */,
+			);
+			path = Shaders;
+			sourceTree = "<group>";
+		};
 		B964EB7426B6CEE000DD54AA = {
 			isa = PBXGroup;
 			children = (
@@ -67,7 +87,14 @@
 		B964EB7F26B6CEE000DD54AA /* OpenGLTriangle */ = {
 			isa = PBXGroup;
 			children = (
+				B938256026E3B8D40013F111 /* Shaders */,
 				B964EB9126B6CF9A00DD54AA /* main.cpp */,
+				B938255A26E337710013F111 /* Mesh.cpp */,
+				B938255C26E3377C0013F111 /* Mesh.h */,
+				B938255D26E3B0AF0013F111 /* Shader.cpp */,
+				B938255F26E3B1B80013F111 /* Shader.h */,
+				B938256326E3BE850013F111 /* Window.cpp */,
+				B938256526E3BE940013F111 /* Window.h */,
 			);
 			path = OpenGLTriangle;
 			sourceTree = "<group>";
@@ -138,7 +165,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B938255B26E337710013F111 /* Mesh.cpp in Sources */,
+				B938255E26E3B0AF0013F111 /* Shader.cpp in Sources */,
 				B964EB9326B6CF9A00DD54AA /* main.cpp in Sources */,
+				B938256426E3BE850013F111 /* Window.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,6 +226,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -249,6 +280,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
 				MACOSX_DEPLOYMENT_TARGET = 11.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
