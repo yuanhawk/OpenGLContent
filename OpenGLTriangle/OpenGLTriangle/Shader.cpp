@@ -72,11 +72,17 @@ void Shader::CompileShader(const char* vertexCode, const char* fragmentCode) {
     if (!result) {
         glGetProgramInfoLog(shaderID, sizeof(eLog), NULL, eLog);
         printf("Error validating program: '%s'\n", eLog);
-//        return;
+        return;
     }
+    glBindVertexArray(0);
     
     uniformProjection = glGetUniformLocation(shaderID, "projection");
     uniformModel = glGetUniformLocation(shaderID, "model");
+    uniformView = glGetUniformLocation(shaderID, "view");
+    uniformAmbientColor = glGetUniformLocation(shaderID, "directionalLight.color");
+    uniformAmbientIntensity = glGetUniformLocation(shaderID, "directionalLight.ambientIntensity");
+    uniformDirection = glGetUniformLocation(shaderID, "directionalLight.direction");
+    uniformDiffuseIntensity = glGetUniformLocation(shaderID, "directionalLight.diffuseIntensity");
 }
 
 void Shader::AddShader(GLuint theProgram, const char* shaderCode, GLenum shaderType) {
@@ -86,7 +92,7 @@ void Shader::AddShader(GLuint theProgram, const char* shaderCode, GLenum shaderT
     theCode[0] = shaderCode;
     
     GLint codeLength[1];
-    codeLength[0] = strlen(shaderCode);
+    codeLength[0] = static_cast<int>(strlen(shaderCode));
     
     glShaderSource(theShader, 1, theCode, codeLength);
     glCompileShader(theShader);
@@ -95,6 +101,7 @@ void Shader::AddShader(GLuint theProgram, const char* shaderCode, GLenum shaderT
     GLchar eLog[1024] = { 0 };
     
     glGetShaderiv(theShader, GL_COMPILE_STATUS, &result);
+    
     if (!result) {
         glGetProgramInfoLog(theShader, sizeof(eLog), NULL, eLog);
         printf("Error compiling the %d shader: '%s'\n", shaderType, eLog);
@@ -109,6 +116,26 @@ GLuint Shader::GetProjectionLocation(){
 
 GLuint Shader::GetModelLocation() {
     return uniformModel;
+}
+
+GLuint Shader::GetViewLocation() {
+    return uniformView;
+}
+
+GLuint Shader::GetAmbientColorLocation() {
+    return uniformAmbientColor;
+}
+
+GLuint Shader::GetAmbientIntensityLocation() {
+    return uniformAmbientIntensity;
+}
+
+GLuint Shader::GetDiffuseIntensityLocation() {
+    return uniformDiffuseIntensity;
+}
+
+GLuint Shader::GetDirectionLocation() {
+    return uniformDirection;
 }
 
 void Shader::UseShader() {

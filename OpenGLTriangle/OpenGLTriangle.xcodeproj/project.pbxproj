@@ -10,10 +10,13 @@
 		B938255B26E337710013F111 /* Mesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B938255A26E337710013F111 /* Mesh.cpp */; };
 		B938255E26E3B0AF0013F111 /* Shader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B938255D26E3B0AF0013F111 /* Shader.cpp */; };
 		B938256426E3BE850013F111 /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B938256326E3BE850013F111 /* Window.cpp */; };
-		B964EB8926B6CF0C00DD54AA /* libGLEW.2.2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B964EB8826B6CF0C00DD54AA /* libGLEW.2.2.0.dylib */; };
 		B964EB8B26B6CF1200DD54AA /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B964EB8A26B6CF1200DD54AA /* OpenGL.framework */; };
-		B964EB8D26B6CF1F00DD54AA /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B964EB8C26B6CF1F00DD54AA /* libglfw.3.3.dylib */; };
 		B964EB9326B6CF9A00DD54AA /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B964EB9126B6CF9A00DD54AA /* main.cpp */; };
+		B98581D42774187D004B0783 /* Camera.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B98581D22774187D004B0783 /* Camera.cpp */; };
+		B98581DC2775B2B6004B0783 /* Texture.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B98581DB2775B2B6004B0783 /* Texture.cpp */; };
+		B9CB71402773193500DFD0D0 /* libglfw.3.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B9CB713F2773193500DFD0D0 /* libglfw.3.3.dylib */; };
+		B9CB71412773195900DFD0D0 /* libGLEW.2.2.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B964EB8826B6CF0C00DD54AA /* libGLEW.2.2.0.dylib */; };
+		B9F4EAE627795F2F005B4630 /* Light.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B9F4EAE527795F2F005B4630 /* Light.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,6 +45,14 @@
 		B964EB8A26B6CF1200DD54AA /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		B964EB8C26B6CF1F00DD54AA /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../opt/homebrew/Cellar/glfw/3.3.4/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
 		B964EB9126B6CF9A00DD54AA /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		B98581D22774187D004B0783 /* Camera.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Camera.cpp; sourceTree = "<group>"; };
+		B98581D927741BB4004B0783 /* Camera.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Camera.h; sourceTree = "<group>"; };
+		B98581DA2775B253004B0783 /* stb_image.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = stb_image.h; sourceTree = "<group>"; };
+		B98581DB2775B2B6004B0783 /* Texture.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Texture.cpp; sourceTree = "<group>"; };
+		B98581DD2775B2C4004B0783 /* Texture.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Texture.h; sourceTree = "<group>"; };
+		B9CB713F2773193500DFD0D0 /* libglfw.3.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libglfw.3.3.dylib; path = ../../../../opt/homebrew/Cellar/glfw/3.3.6/lib/libglfw.3.3.dylib; sourceTree = "<group>"; };
+		B9F4EAE527795F2F005B4630 /* Light.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Light.cpp; sourceTree = "<group>"; };
+		B9F4EAE727795F38005B4630 /* Light.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Light.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,9 +60,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9CB71412773195900DFD0D0 /* libGLEW.2.2.0.dylib in Frameworks */,
+				B9CB71402773193500DFD0D0 /* libglfw.3.3.dylib in Frameworks */,
 				B964EB8B26B6CF1200DD54AA /* OpenGL.framework in Frameworks */,
-				B964EB8926B6CF0C00DD54AA /* libGLEW.2.2.0.dylib in Frameworks */,
-				B964EB8D26B6CF1F00DD54AA /* libglfw.3.3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +99,9 @@
 			isa = PBXGroup;
 			children = (
 				B938256026E3B8D40013F111 /* Shaders */,
+				B98581DA2775B253004B0783 /* stb_image.h */,
+				B9F4EAE727795F38005B4630 /* Light.h */,
+				B9F4EAE527795F2F005B4630 /* Light.cpp */,
 				B964EB9126B6CF9A00DD54AA /* main.cpp */,
 				B938255A26E337710013F111 /* Mesh.cpp */,
 				B938255C26E3377C0013F111 /* Mesh.h */,
@@ -95,6 +109,10 @@
 				B938255F26E3B1B80013F111 /* Shader.h */,
 				B938256326E3BE850013F111 /* Window.cpp */,
 				B938256526E3BE940013F111 /* Window.h */,
+				B98581D22774187D004B0783 /* Camera.cpp */,
+				B98581D927741BB4004B0783 /* Camera.h */,
+				B98581DD2775B2C4004B0783 /* Texture.h */,
+				B98581DB2775B2B6004B0783 /* Texture.cpp */,
 			);
 			path = OpenGLTriangle;
 			sourceTree = "<group>";
@@ -103,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				B964EB8C26B6CF1F00DD54AA /* libglfw.3.3.dylib */,
+				B9CB713F2773193500DFD0D0 /* libglfw.3.3.dylib */,
 				B964EB8A26B6CF1200DD54AA /* OpenGL.framework */,
 				B964EB8826B6CF0C00DD54AA /* libGLEW.2.2.0.dylib */,
 			);
@@ -165,8 +184,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9F4EAE627795F2F005B4630 /* Light.cpp in Sources */,
 				B938255B26E337710013F111 /* Mesh.cpp in Sources */,
 				B938255E26E3B0AF0013F111 /* Shader.cpp in Sources */,
+				B98581D42774187D004B0783 /* Camera.cpp in Sources */,
+				B98581DC2775B2B6004B0783 /* Texture.cpp in Sources */,
 				B964EB9326B6CF9A00DD54AA /* main.cpp in Sources */,
 				B938256426E3BE850013F111 /* Window.cpp in Sources */,
 			);
@@ -299,6 +321,7 @@
 					"$(inherited)",
 					/opt/homebrew/Cellar/glew/2.2.0_1/lib,
 					/opt/homebrew/Cellar/glfw/3.3.4/lib,
+					/opt/homebrew/Cellar/glfw/3.3.6/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -315,6 +338,7 @@
 					"$(inherited)",
 					/opt/homebrew/Cellar/glew/2.2.0_1/lib,
 					/opt/homebrew/Cellar/glfw/3.3.4/lib,
+					/opt/homebrew/Cellar/glfw/3.3.6/lib,
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

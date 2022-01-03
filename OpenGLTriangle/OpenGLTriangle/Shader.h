@@ -5,12 +5,6 @@
 //  Created by Tan Li Yuan on 4/9/21.
 //
 
-#ifndef Shader_h
-#define Shader_h
-
-
-#endif /* Shader_h */
-
 #include <stdio.h>
 #include <string>
 #include <iostream>
@@ -29,6 +23,11 @@ public:
     
     GLuint GetProjectionLocation();
     GLuint GetModelLocation();
+    GLuint GetViewLocation();
+    GLuint GetAmbientIntensityLocation();
+    GLuint GetAmbientColorLocation();
+    GLuint GetDiffuseIntensityLocation();
+    GLuint GetDirectionLocation();
     
     void UseShader();
     void ClearShader();
@@ -36,7 +35,7 @@ public:
     ~Shader();
     
 private:
-    GLuint shaderID, uniformProjection, uniformModel;
+    GLuint shaderID, uniformProjection, uniformModel, uniformView, uniformAmbientIntensity, uniformAmbientColor, uniformDiffuseIntensity, uniformDirection;
     
     void CompileShader(const char* vertexCode, const char* fragmentCode);
     void AddShader(GLuint theProgram, const char* shaderCode, GLenum shaderType);
